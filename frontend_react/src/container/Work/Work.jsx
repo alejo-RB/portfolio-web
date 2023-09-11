@@ -110,5 +110,3 @@ const Work = () => {
 };
 
 export default AppWrap(Work, 'work');
-
-//2:42:46
