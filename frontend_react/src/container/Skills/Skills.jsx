@@ -8,7 +8,7 @@ import { urlFor, client } from "../../client";
 import "./Skills.scss";
 
 const Skills = () => {
-  const [experience, setExperience] = useState([]);
+  const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Skills = () => {
     const skillsQuery = '*[_type == "skills"]';
 
     client.fetch(query).then((data) => {
-      setExperience(data);
+      setExperiences(data);
     });
 
     client.fetch(skillsQuery).then((data) => {
@@ -48,13 +48,13 @@ const Skills = () => {
           ))}
         </motion.div>
         <motion.div className="app__skills-exp">
-          {experience?.sort((a, b) => a.year - b.year).map((experience) => (
+          {experiences.sort((a, b) => a.year - b.year).map((experience) => (
             <motion.div className="app__skills-exp-item" 
             key={experience.year}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
-              <motion.div className="app__skills-exp-works">
+              <motion.div className="app__skills-exp-works" >
                 {experience.works.map((work) => (
                   <>
                     <motion.div
@@ -73,7 +73,6 @@ const Skills = () => {
                       effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
-                      globalEventOff="mouseleave"
                     >
                       {work.desc}
                     </ReactTooltip>
