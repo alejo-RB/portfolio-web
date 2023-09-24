@@ -6,7 +6,7 @@ import { client } from '../../client'
 import './Footer.scss';
 
 const Fotter = () => {
-  const [formData, setFormData] = useState({ name: '', email:'', message:''})
+  const [formData, setFormData] = useState({ name: '', email: '', message:''})
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false)
 
@@ -63,11 +63,11 @@ const Fotter = () => {
             className='p-text'
             placeholder='Your Message'
             value={message}
-            name={message}
+            name="message"
             onChange={handleChangeInput}
           />
         </div>
-        <button type='button' className='p-text' onClick={handleSubmit}>{ loading ? 'Sending' : 'Send Message'}</button>
+        <button type='button' className='p-text' onClick={handleSubmit}>{ !loading ? 'Send Message' : '...Sending'}</button>
       </div>
       : <div>
         <h3 className='head-text'>Thank you for getting in touch!</h3>
@@ -78,7 +78,7 @@ const Fotter = () => {
 }
 
 export default AppWrap (
-  MotionWrap(Fotter, 'app__fotter'),
+  MotionWrap(Fotter, 'app__footer'),
   'contact',
   "app__whitebg"
   );
