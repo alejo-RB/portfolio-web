@@ -8,7 +8,7 @@ const devOnlyPlugins = [getStartedPlugin()]
 
 export default defineConfig({
   name: 'default',
-  title: 'linen-aardvark',
+  title: 'bdd_portfolio',
 
   projectId: 'h3uqzpuu',
   dataset: 'production',
