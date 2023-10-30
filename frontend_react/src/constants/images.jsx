@@ -18,6 +18,7 @@ import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
 import vue from '../assets/vue.png';
+import php from '../assets/php.png';
 
 import about01 from '../assets/about01.png';
 import about02 from '../assets/about02.png';
@@ -48,6 +49,7 @@ export default {
   git,
   graphql,
   html,
+  php,
   javascript,
   mu5,
   node,
